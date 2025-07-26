@@ -1,6 +1,7 @@
 {
   "name": "my-portfolio-v2",
-  "private": true,
+  "private": false,
+ "homepage": "https://Chris-D-Jose-Castaneda.github.io/my-portfolio-v2",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
