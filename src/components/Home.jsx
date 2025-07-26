@@ -1,12 +1,36 @@
 // src/components/Home.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { FaPlay } from "react-icons/fa";
 import { GiPalmTree } from "react-icons/gi";
 import SocialLinks from "./SocialLinks";
 import Hobbies from "./Hobbies";
 import Skills from "./Skills";
-import GitHubCalendar from "react-github-calendar";
+
+//
+// Dynamic fetch of GitHub contributions SVG at runtime
+//
+function DynamicGitHubCalendar({ username }) {
+  const [svg, setSvg] = useState("");
+  useEffect(() => {
+    fetch(`https://github.com/users/${username}/contributions`)
+      .then((res) => res.text())
+      .then(setSvg)
+      .catch((err) => console.error("Failed to load GitHub contributions:", err));
+  }, [username]);
+
+  if (!svg) {
+    return <p className="text-center dark:text-gray-300">Loading contributions…</p>;
+  }
+
+  return (
+    <div
+      className="overflow-x-auto max-w-full"
+      // GitHub returns a <svg>…</svg> of your past‑year graph
+      dangerouslySetInnerHTML={{ __html: svg }}
+    />
+  );
+}
 
 export default function Home() {
   const [playing, setPlaying] = useState(false);
@@ -30,14 +54,10 @@ export default function Home() {
             />
           </h1>
           <p className="mt-2 text-lg dark:text-gray-200">
-            A{' '}
+            A{" "}
             <span className="font-semibold">
               <Typewriter
-                words={[
-                  "Statistician",
-                  "Data Scientist",
-                  "Developer",
-                ]}
+                words={["Statistician", "Data Scientist", "Developer"]}
                 loop={0}
                 cursor
                 cursorStyle="|"
@@ -45,17 +65,18 @@ export default function Home() {
                 deleteSpeed={50}
                 delaySpeed={3000}
               />
-            </span>{' '}
-            From Naples, FL{' '}
+            </span>{" "}
+            From Naples, FL{" "}
             <GiPalmTree className="inline-block text-2xl text-teal-500" />
           </p>
-          {/* Increased spacing with mt-6 */}
           <p className="mt-6 text-base italic dark:text-gray-300">
-            Mathematics | Economics | Machine Learning | Programming | Stochastic Processes | Time Series Analysis | Multivariate Analysis | Quantitative Analysis
+            Mathematics | Economics | Machine Learning | Programming |
+            Stochastic Processes | Time Series Analysis | Multivariate Analysis
+            | Quantitative Analysis
           </p>
         </div>
 
-        {/* Headshot & Spotify (centered on mobile, inline on desktop) */}
+        {/* Headshot & Spotify */}
         <div className="w-full md:w-1/2 flex flex-col items-center md:items-end">
           <img
             src="/assets/headshot.png"
@@ -85,7 +106,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SOCIAL LINKS (above GitHub, flush‑left on desktop, centered on mobile) */}
+      {/* SOCIAL LINKS */}
       <section className="mb-16 flex justify-center md:justify-start space-x-8 text-5xl">
         <SocialLinks />
       </section>
@@ -95,14 +116,7 @@ export default function Home() {
         <h2 className="text-2xl font-semibold mb-4 dark:text-gray-100">
           GitHub Contributions
         </h2>
-        <div className="overflow-x-auto max-w-full">
-          <GitHubCalendar
-            username="Chris-D-Jose-Castaneda"
-            blockSize={14}
-            blockMargin={3}
-            fontSize={12}
-          />
-        </div>
+        <DynamicGitHubCalendar username="Chris-D-Jose-Castaneda" />
       </section>
 
       {/* SKILLS & HOBBIES */}
