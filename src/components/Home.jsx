@@ -1,5 +1,5 @@
 // src/components/Home.jsx
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, lazy, Suspense } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { FaPlay } from "react-icons/fa";
 import { GiPalmTree } from "react-icons/gi";
@@ -7,40 +7,24 @@ import SocialLinks from "./SocialLinks";
 import Hobbies from "./Hobbies";
 import Skills from "./Skills";
 
-//
-// Dynamic fetch of GitHub contributions SVG at runtime
-//
-function DynamicGitHubCalendar({ username }) {
-  const [svg, setSvg] = useState("");
-  useEffect(() => {
-    fetch(`https://github.com/users/${username}/contributions`)
-      .then((res) => res.text())
-      .then(setSvg)
-      .catch((err) => console.error("Failed to load GitHub contributions:", err));
-  }, [username]);
-
-  if (!svg) {
-    return <p className="text-center dark:text-gray-300">Loading contributions…</p>;
-  }
-
-  return (
-    <div
-      className="overflow-x-auto max-w-full"
-      // GitHub returns a <svg>…</svg> of your past‑year graph
-      dangerouslySetInnerHTML={{ __html: svg }}
-    />
-  );
-}
+const GitHubCalendar = lazy(() => import("react-github-calendar"));
 
 export default function Home() {
   const [playing, setPlaying] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const TRACK_ID = "1BJJbSX6muJVF2AK7uH1x4";
+  const username = "Chris-D-Jose-Castaneda";
+
+  useEffect(() => {
+    // ensure calendar only renders in the browser
+    setMounted(true);
+  }, []);
 
   return (
     <main className="w-full max-w-4xl mx-auto px-4 sm:px-6 py-12">
       {/* HERO */}
       <section className="mb-16 flex flex-col md:flex-row items-start md:items-center">
-        {/* Intro & Dynamic Roles */}
+        {/* Intro */}
         <div className="w-full md:w-1/2 text-center md:text-left mb-8 md:mb-0">
           <h1 className="text-5xl font-bold dark:text-gray-100">
             <Typewriter
@@ -71,8 +55,8 @@ export default function Home() {
           </p>
           <p className="mt-6 text-base italic dark:text-gray-300">
             Mathematics | Economics | Machine Learning | Programming |
-            Stochastic Processes | Time Series Analysis | Multivariate Analysis
-            | Quantitative Analysis
+            Stochastic Processes | Time Series Analysis | Multivariate
+            Analysis | Quantitative Analysis
           </p>
         </div>
 
@@ -116,7 +100,22 @@ export default function Home() {
         <h2 className="text-2xl font-semibold mb-4 dark:text-gray-100">
           GitHub Contributions
         </h2>
-        <DynamicGitHubCalendar username="Chris-D-Jose-Castaneda" />
+        {mounted && (
+          <Suspense
+            fallback={
+              <p className="text-center dark:text-gray-300">
+                Loading contributions…
+              </p>
+            }
+          >
+            <GitHubCalendar
+              username={username}
+              blockSize={14}
+              blockMargin={3}
+              fontSize={12}
+            />
+          </Suspense>
+        )}
       </section>
 
       {/* SKILLS & HOBBIES */}
@@ -125,5 +124,5 @@ export default function Home() {
         <Hobbies />
       </div>
     </main>
-  );
+);
 }
