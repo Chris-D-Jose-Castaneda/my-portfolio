@@ -19,8 +19,14 @@ export default function Hobbies() {
       <ul className="space-y-3">
         {hobbies.map(({ icon, label }) => (
           <li key={label} className="flex items-center space-x-2">
-            <span className="text-2xl text-indigo-700 dark:text-indigo-300">{icon}</span>
-            <span className="text-2xl text-indigo-700 dark:text-indigo-300">{label}</span>
+            {/* keep icon size but match its color to the teal theme */}
+            <span className="text-2xl text-teal-700 dark:text-teal-300">
+              {icon}
+            </span>
+            {/* label now matches Skills.jsx tags’ font and color */}
+            <span className="text-sm font-medium text-teal-700 dark:text-teal-300">
+              {label}
+            </span>
           </li>
         ))}
       </ul>
