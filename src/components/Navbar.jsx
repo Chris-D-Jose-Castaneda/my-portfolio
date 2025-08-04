@@ -61,17 +61,16 @@ export default function Navbar() {
         {/* Logo + Search */}
         <div className="flex items-center space-x-4">
           {/* Gradient CJ logo */}
-          <div
-            className="
-              text-2xl font-bold
-              bg-clip-text text-transparent
-              bg-gradient-to-r 
-                from-teal-500 via-teal-600 to-blue-500
-              dark:from-teal-300 dark:via-teal-400 dark:to-teal-500
-            "
-          >
-            CJ
-          </div>
+        <NavLink to="/" className="            
+        text-2xl font-bold
+           bg-clip-text text-transparent
+            bg-gradient-to-r 
+            from-teal-500 via-teal-600 to-blue-500
+            dark:from-teal-300 dark:via-teal-400 dark:to-teal-500
+          ">
+          CJ
+        </NavLink>
+
 
           {/* Search button */}
           <button
