@@ -4,8 +4,6 @@ import { Typewriter } from "react-simple-typewriter";
 import { FaPlay } from "react-icons/fa";
 import { GiPalmTree } from "react-icons/gi";
 import SocialLinks from "./SocialLinks";
-import Hobbies from "./Hobbies";
-import Skills from "./Skills";
 
 const GitHubCalendar = lazy(() => import("react-github-calendar"));
 
@@ -51,7 +49,7 @@ export default function Home() {
             <GiPalmTree className="inline-block text-2xl text-teal-500" />
           </p>
           <p className="mt-6 text-base italic dark:text-gray-300">
-            Mathematics | Economics | Machine Learning | Programming |
+            Mathematics | Finance | Economics | Machine Learning | Programming |
             Stochastic Processes | Time Series Analysis | Multivariate
             Analysis | Quantitative Analysis
           </p>
@@ -64,7 +62,6 @@ export default function Home() {
             alt="Chris Jose headshot"
             className="w-48 h-48 rounded-full mb-4 object-cover shadow-lg"
           />
-
           {!playing ? (
             <button
               onClick={() => setPlaying(true)}
@@ -88,12 +85,12 @@ export default function Home() {
       </section>
 
       {/* SOCIAL LINKS */}
-      <section className="mb-16 flex justify-center md:justify-start">
+      <section className="mb-12 flex justify-center md:justify-start">
         <SocialLinks />
       </section>
 
       {/* GITHUB CONTRIBUTIONS */}
-      <section className="mb-16">
+      <section>
         <h2 className="text-2xl font-semibold mb-4 dark:text-gray-100">
           GitHub Contributions
         </h2>
@@ -114,12 +111,6 @@ export default function Home() {
           <div className="h-28 rounded-md bg-gray-100 dark:bg-gray-800 animate-pulse" />
         )}
       </section>
-
-      {/* SKILLS & HOBBIES */}
-      <div className="grid md:grid-cols-2 gap-12">
-        <Skills />
-        <Hobbies />
-      </div>
     </main>
   );
 }
