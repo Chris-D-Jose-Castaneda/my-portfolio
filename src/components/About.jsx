@@ -58,9 +58,9 @@ const cookingFavorites = [
 ];
 
 const bayernGames = [
-  "Bayern vs PSG: 1–0 (UCL Group Stage)",
-  "Bayern vs Bayer Leverkusen: 3–0 (UCL Ro16)",
-  "Bayern vs Leipzig: 5–1 (MD 15)",
+  "Bayern vs Chelsea: 3–1 (UCL Group Stage)",
+  "Bayern vs VFB Stuttgart: 2-1 (DFB Supercup)",
+  "Bayern vs Leipzig: 6-0 (MD 1)",
 ];
 
 const gardening = [
@@ -83,7 +83,7 @@ export default function About() {
       {/* Bio */}
       <section>
         <h1 className="text-3xl font-bold mb-4 dark:text-white">About Me</h1>
-        <p className="italic leading-loose text-gray-800 dark:text-white">
+        <p className="text-gray-800 dark:text-white">
           I’m Chris Jose, an aspiring quantitative analyst with a solid grounding
           in econometrics, statistics, machine learning, time series modeling,
           and stochastic processes. My academic journey through Calculus I–III,
@@ -103,7 +103,7 @@ export default function About() {
             rel="noopener noreferrer"
             className="text-teal-600 underline dark:text-teal-300"
           >
-            Fun Fact: Check out my Google reviews!
+            Click to check out my Google reviews!
           </a>
         </p>
       </section>
@@ -185,7 +185,7 @@ export default function About() {
         {/* Bayern Games */}
         <div className="text-center md:col-start-3 md:row-start-3">
           <h2 className="text-2xl font-bold mb-4 text-teal-600 dark:text-teal-300">
-            Best 24/25 Season Bayern Munich Games
+            Best 25/26 Season Bayern Munich Games
           </h2>
           <div className="p-6 rounded-lg shadow dark:shadow-none dark:border dark:border-gray-700">
             <ul className="list-none space-y-1 text-gray-800 dark:text-gray-200">

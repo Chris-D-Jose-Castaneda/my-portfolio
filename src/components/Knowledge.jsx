@@ -86,7 +86,7 @@ const timeline = [
     ],
   },
   {
-    skill: "Front end Development",
+    skill: "Front End Development",
     years: 3,
     bullets: ["React · Vite · Tailwind · HTML · CSS · JavaScript"],
   },
@@ -344,8 +344,8 @@ export default function Knowledge() {
         </GridCards>
       </Section>
 
-      {/* Quant foundations & coursework */}
-      <Section icon={<FiBookOpen className="text-teal-500" />} title="Quantitative Foundations & Coursework">
+      {/* foundations & coursework */}
+      <Section icon={<FiBookOpen className="text-teal-500" />} title="Foundations & Coursework">
         <GridCards>
           <Card className="p-6 space-y-4">
             <h3 className="font-semibold text-gray-900 dark:text-gray-100">Core Areas</h3>

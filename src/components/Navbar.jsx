@@ -46,9 +46,9 @@ export default function Navbar() {
 
   const navItems = [
     { name: "Home", to: "/", icon: <FiHome size={18} /> },
-    { name: "Projects", to: "/projects", icon: <FiFolder size={18} /> },
     { name: "About", to: "/about", icon: <FiInfo size={18} /> },
-    { name: "Skills", to: "/knowledge", icon: <FiBookOpen size={18} /> }, // <-- NEW
+    { name: "Skills", to: "/knowledge", icon: <FiBookOpen size={18} /> }, 
+    { name: "Projects", to: "/projects", icon: <FiFolder size={18} /> },
     {
       name: "Contact",
       to: "mailto:chris.jose.castaneda@gmail.com",
@@ -203,7 +203,7 @@ export default function Navbar() {
               </button>
             </div>
             <ul className="divide-y divide-gray-200 dark:divide-gray-600">
-              {["Home", "Projects", "About", "Knowledge"].map((item) => (
+              {["Home", "Projects", "About", "Skills"].map((item) => (
                 <li key={item}>
                   <NavLink
                     to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
