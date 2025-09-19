@@ -11,6 +11,7 @@ import {
   FiX,
   FiMoon,
   FiSun,
+  FiBookOpen, // <-- for Knowledge
 } from "react-icons/fi";
 
 export default function Navbar() {
@@ -47,6 +48,7 @@ export default function Navbar() {
     { name: "Home", to: "/", icon: <FiHome size={18} /> },
     { name: "Projects", to: "/projects", icon: <FiFolder size={18} /> },
     { name: "About", to: "/about", icon: <FiInfo size={18} /> },
+    { name: "Skills", to: "/knowledge", icon: <FiBookOpen size={18} /> }, // <-- NEW
     {
       name: "Contact",
       to: "mailto:chris.jose.castaneda@gmail.com",
@@ -61,16 +63,18 @@ export default function Navbar() {
         {/* Logo + Search */}
         <div className="flex items-center space-x-4">
           {/* Gradient CJ logo */}
-        <NavLink to="/" className="            
-        text-2xl font-bold
-           bg-clip-text text-transparent
-            bg-gradient-to-r 
-            from-teal-500 via-teal-600 to-blue-500
-            dark:from-teal-300 dark:via-teal-400 dark:to-teal-500
-          ">
-          CJ
-        </NavLink>
-
+          <NavLink
+            to="/"
+            className="
+              text-2xl font-bold
+              bg-clip-text text-transparent
+              bg-gradient-to-r 
+              from-teal-500 via-teal-600 to-blue-500
+              dark:from-teal-300 dark:via-teal-400 dark:to-teal-500
+            "
+          >
+            CJ
+          </NavLink>
 
           {/* Search button */}
           <button
@@ -89,6 +93,8 @@ export default function Navbar() {
               <li key={name}>
                 <a
                   href={to}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center space-x-1 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
                 >
                   {icon}
@@ -119,9 +125,7 @@ export default function Navbar() {
           <button
             onClick={() => setDarkMode((dm) => !dm)}
             className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white focus:outline-none"
-            title={
-              darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"
-            }
+            title={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
           >
             {darkMode ? <FiSun /> : <FiMoon />}
           </button>
@@ -146,6 +150,8 @@ export default function Navbar() {
                 <li key={name}>
                   <a
                     href={to}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={() => setMenuOpen(false)}
                     className="flex items-center space-x-2 px-6 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
                   >
@@ -197,7 +203,7 @@ export default function Navbar() {
               </button>
             </div>
             <ul className="divide-y divide-gray-200 dark:divide-gray-600">
-              {["Home", "Projects", "About"].map((item) => (
+              {["Home", "Projects", "About", "Knowledge"].map((item) => (
                 <li key={item}>
                   <NavLink
                     to={item === "Home" ? "/" : `/${item.toLowerCase()}`}

@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Projects from "./components/Projects";
 import About from "./components/About";
+import Knowledge from "./components/Knowledge"; // <-- fix: different name
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/about" element={<About />} />
+          <Route path="/knowledge" element={<Knowledge />} /> {/* optional new page */}
         </Routes>
       </main>
       <Footer />

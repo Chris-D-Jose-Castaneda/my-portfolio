@@ -6,7 +6,7 @@ import { SiKaggle } from "react-icons/si";
 export default function SocialLinks() {
   const socials = [
     { icon: <FaGithub size={28} />, url: "https://github.com/Chris-D-Jose-Castaneda" },
-    { icon: <FaLinkedin size={28} />, url: "https://www.linkedin.com/in/chris-j-7aa2a1211/" },
+    { icon: <FaLinkedin size={28} />, url: "https://www.linkedin.com/in/chris-d-jose" },
     { icon: <SiKaggle size={28} />, url: "https://www.kaggle.com/chrisjosecastaneda" },
   ];
 

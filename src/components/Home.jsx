@@ -15,10 +15,7 @@ export default function Home() {
   const TRACK_ID = "2m5FeI7UUcI4nRBTSLjlLw";
   const username = "Chris-D-Jose-Castaneda";
 
-  useEffect(() => {
-    // ensure calendar only renders in the browser
-    setMounted(true);
-  }, []);
+  useEffect(() => setMounted(true), []);
 
   return (
     <main className="w-full max-w-4xl mx-auto px-4 sm:px-6 py-12">
@@ -50,7 +47,7 @@ export default function Home() {
                 delaySpeed={3000}
               />
             </span>{" "}
-            From Naples, FL{" "}
+            from Naples, FL{" "}
             <GiPalmTree className="inline-block text-2xl text-teal-500" />
           </p>
           <p className="mt-6 text-base italic dark:text-gray-300">
@@ -64,7 +61,7 @@ export default function Home() {
         <div className="w-full md:w-1/2 flex flex-col items-center md:items-end">
           <img
             src="/assets/headshot.png"
-            alt="Chris Jose"
+            alt="Chris Jose headshot"
             className="w-48 h-48 rounded-full mb-4 object-cover shadow-lg"
           />
 
@@ -82,7 +79,7 @@ export default function Home() {
               width="320"
               height="100"
               frameBorder="0"
-              allow="encrypted-media"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               className="rounded-lg shadow-lg mt-4"
               title="Spotify Player"
             />
@@ -91,7 +88,7 @@ export default function Home() {
       </section>
 
       {/* SOCIAL LINKS */}
-      <section className="mb-16 flex justify-center md:justify-start space-x-8 text-5xl">
+      <section className="mb-16 flex justify-center md:justify-start">
         <SocialLinks />
       </section>
 
@@ -100,12 +97,10 @@ export default function Home() {
         <h2 className="text-2xl font-semibold mb-4 dark:text-gray-100">
           GitHub Contributions
         </h2>
-        {mounted && (
+        {mounted ? (
           <Suspense
             fallback={
-              <p className="text-center dark:text-gray-300">
-                Loading contributions…
-              </p>
+              <div className="h-28 rounded-md bg-gray-100 dark:bg-gray-800 animate-pulse" />
             }
           >
             <GitHubCalendar
@@ -115,6 +110,8 @@ export default function Home() {
               fontSize={12}
             />
           </Suspense>
+        ) : (
+          <div className="h-28 rounded-md bg-gray-100 dark:bg-gray-800 animate-pulse" />
         )}
       </section>
 
@@ -124,5 +121,5 @@ export default function Home() {
         <Hobbies />
       </div>
     </main>
-);
+  );
 }
