@@ -272,13 +272,13 @@ function MarqueeBelt({ items, height = 56, duration = 24000 }) {
 }
 
 /* ---------------- Page ---------------- */
-export default function Knowledge() {
+export default function Skills() {
   return (
     <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-10">
       {/* Hero */}
       <header className="rounded-2xl bg-gradient-to-b from-teal-50 via-white to-indigo-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 border border-gray-200/70 dark:border-gray-800 p-6 sm:p-10 text-center">
         <img src={img("/assets/Cornell_University_Logo.png")} alt="Cornell University seal" className="mx-auto h-14 w-14 object-contain mb-4" />
-        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100">Knowledge & Skills</h1>
+        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100">Skills</h1>
 
         <p className="mt-4 max-w-4xl mx-auto text-sm sm:text-base text-gray-700 dark:text-gray-300">
           Graduated with a Bachelor of Science in Statistics in five semesters. Coursework in time series, econometrics, and machine learning highlighted how data drives markets sparking curiosity.

@@ -11,7 +11,7 @@ import {
   FiX,
   FiMoon,
   FiSun,
-  FiBookOpen, // <-- for Knowledge
+  FiBookOpen, 
 } from "react-icons/fi";
 
 export default function Navbar() {
@@ -47,7 +47,7 @@ export default function Navbar() {
   const navItems = [
     { name: "Home", to: "/", icon: <FiHome size={18} /> },
     { name: "About", to: "/about", icon: <FiInfo size={18} /> },
-    { name: "Skills", to: "/knowledge", icon: <FiBookOpen size={18} /> }, 
+    { name: "Skills", to: "/Skills", icon: <FiBookOpen size={18} /> }, 
     { name: "Projects", to: "/projects", icon: <FiFolder size={18} /> },
     {
       name: "Contact",
