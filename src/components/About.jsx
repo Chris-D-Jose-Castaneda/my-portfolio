@@ -87,7 +87,7 @@ const favoriteSpots = [
 
 const cookingFavorites = [
   { name: "Ribeye w/ Chimichurri & Mashed Potatoes", img: "/assets/Ribeye.png" },
-  { name: "Steak", img: "/assets/Grilled_Wings_Steak.png" },
+  { name: "Grilling Steak & Wings", img: "/assets/Grilled_Wings_Steak.png" },
   { name: "Vodka Rigatoni w/ Baked Chicken", img: "/assets/vodka_rigatoni.png" },
 ];
 
