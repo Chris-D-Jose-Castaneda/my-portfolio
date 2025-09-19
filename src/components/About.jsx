@@ -92,9 +92,9 @@ const cookingFavorites = [
 ];
 
 const bayernGames = [
-  "Bayern vs PSG: 1–0 (UCL Group Stage)",
-  "Bayern vs Bayer Leverkusen: 3–0 (UCL Ro16)",
-  "Bayern vs Leipzig: 5–1 (MD 15)",
+  "Bayern vs Chelsea: 3-1 (UCL Group Stage)",
+  "Bayern vs VFB Stuttgart: 2-1 (DFB Supercup)",
+  "Bayern vs Leipzig: 6-0 (MD 1)",
 ];
 
 const gardening = [
@@ -229,7 +229,8 @@ export default function About() {
                 rel="noopener noreferrer"
                 className="group inline-flex flex-col items-center"
               >
-                <GiPerfumeBottle className="text-5xl text-teal-600/90 group-hover:text-teal-500 transition-colors" />
+                {/* CHANGED COLOR HERE */}
+                <GiPerfumeBottle className="text-5xl text-rose-500/90 group-hover:text-rose-400 transition-colors" />
                 <span className="mt-2 font-medium text-gray-900 dark:text-gray-100">
                   Parfums De Marly Greenly
                 </span>
@@ -246,7 +247,8 @@ export default function About() {
                 rel="noopener noreferrer"
                 className="group inline-flex flex-col items-center"
               >
-                <FiWatch className="text-5xl text-teal-600/90 group-hover:text-teal-500 transition-colors" />
+                {/* CHANGED COLOR HERE */}
+                <FiWatch className="text-5xl text-sky-500/90 group-hover:text-sky-400 transition-colors" />
                 <span className="mt-2 font-medium text-gray-900 dark:text-gray-100">
                   Seiko Presage
                 </span>
@@ -256,7 +258,7 @@ export default function About() {
 
           {/* Bayern with icon in title */}
           <Card
-            title="Best 24/25 Season Bayern Munich Games"
+            title="Best 25/26 Season Bayern Munich Games"
             rightIcon={<FaFutbol className="text-xl" />}
           >
             <ul className="list-disc pl-5 space-y-1 text-gray-700 dark:text-gray-300">
