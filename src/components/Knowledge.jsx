@@ -1,4 +1,4 @@
-// src/components/Knowledge.jsx
+// src/components/Skills.jsx
 import React from "react";
 import { FiBookOpen, FiCpu, FiDatabase, FiBriefcase, FiMic, FiGlobe } from "react-icons/fi";
 import { FaUniversity, FaTools } from "react-icons/fa";
