@@ -188,7 +188,7 @@ export default function About() {
 
           {/* Row under Eats — no wasted space */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <Card title="Gardening">
+            <Card title="Gardening" className="h-full min-h-[243px]">
               <Carousel
                 items={gardening}
                 renderItem={(g) => (
@@ -270,7 +270,7 @@ export default function About() {
 
           {/* Kitchen Toolkit keeps the column filled (replaces Current Read) */}
           <Card title="Kitchen Toolkit">
-            <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-gray-900 dark:text-gray-100">
+            <ul className="grid grid-cols-2 gap-x-5 gap-y-2 text-gray-900 dark:text-gray-100">
               {kitchenToolkit.map((line) => (
                 <li key={line}>{line}</li>
               ))}
