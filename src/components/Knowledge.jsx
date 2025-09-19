@@ -205,7 +205,7 @@ const Timeline = () => (
           </span>
           <div className="flex items-center justify-between gap-4">
             <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-100">{t.skill}</h4>
-            <span className="text-xs text-gray-500 dark:text-gray-400">{t.years} yrs experience</span>
+            <span className="text-xs text-gray-500 dark:text-gray-400">{t.years}+ yrs</span>
           </div>
           <ul className="mt-2 list-disc ps-5 text-sm text-gray-700 dark:text-gray-300">
             {t.bullets.map((b) => (
