@@ -14,7 +14,7 @@ const projects = [
     imgAlt: "SWFL Urban Housing analysis cover",
   },
   {
-    name: "SWFL Forecasting Model (V2)",
+    name: "SWFL Forecasting Model V2",
     description:
       "Sold-home forecasting over the past five years with interactive maps and stats.",
     tags: ["Python", "Time Series", "Machine Learning", "GIS"],
@@ -94,7 +94,8 @@ export default function Projects() {
 
   return (
     <main className="w-full max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-12">
-      <h1 className="text-3xl font-bold dark:text-gray-100">Projects</h1>
+      <h1 className="text-3xl font-bold text-center text-gray-900 dark:text-gray-100">Projects</h1>
+
       <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((proj) => (
           <a

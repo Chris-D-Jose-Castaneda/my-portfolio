@@ -123,7 +123,7 @@ export default function About() {
   return (
     <main className="mx-auto w-full max-w-6xl px-4 sm:px-6 py-10 space-y-10">
       {/* About header card (like Skills) */}
-      <section className="rounded-2xl bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950 border border-gray-200/60 dark:border-gray-800 p-6 sm:p-8 shadow-sm">
+      <section className="rounded-2xl bg-gradient-to-b from-teal-50 via-white to-indigo-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 border border-gray-200/70 dark:border-gray-800 p-6 sm:p-10 text-center shadow-sm">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100 text-center mb-3">
           About Me
         </h1>
