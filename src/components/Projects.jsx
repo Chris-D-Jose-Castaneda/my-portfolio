@@ -1,6 +1,6 @@
 // src/components/Projects.jsx
 import React from "react";
-import { FiGithub } from "react-icons/fi";
+import { FiGithub, FiExternalLink } from "react-icons/fi";
 
 const projects = [
   // Row 1
@@ -61,7 +61,7 @@ const projects = [
     imgAlt: "Portfolio strategy comparison",
   },
 
-  // New card (wraps to next row)
+  // New cards (wrap to next row)
   {
     name: "Options Pricing Calculator",
     description:
@@ -71,9 +71,27 @@ const projects = [
     imgSrc: "/assets/options.png",
     imgAlt: "Options pricing app",
   },
+
+  // === LAST ENTRY (requested) ===
+  {
+    name: "Datalytics-Tech",
+    description:
+      "Real estate & data solutions for 100+ clients — dashboards, automation, and market research.",
+    tags: ["Website", "Dashboards", "Automation"],
+    url: "https://datalytics-tech.vercel.app/",
+    imgSrc: "/assets/Datalytics.png",
+    imgAlt: "Datalytics-Tech cover",
+  },
 ];
 
 export default function Projects() {
+  const IconFor = (url) =>
+    url.includes("github.com") ? (
+      <FiGithub className="text-gray-600 dark:text-gray-400 group-hover:text-cyan-400 transition-colors text-2xl" />
+    ) : (
+      <FiExternalLink className="text-gray-600 dark:text-gray-400 group-hover:text-cyan-400 transition-colors text-2xl" />
+    );
+
   return (
     <main className="w-full max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-12">
       <h1 className="text-3xl font-bold dark:text-gray-100">Projects</h1>
@@ -102,7 +120,7 @@ export default function Projects() {
               <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
                 {proj.name}
               </h2>
-              <FiGithub className="text-gray-600 dark:text-gray-400 group-hover:text-cyan-400 transition-colors text-2xl" />
+              {IconFor(proj.url)}
             </div>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
               {proj.description}

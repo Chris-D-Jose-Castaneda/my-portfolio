@@ -93,7 +93,7 @@ const timeline = [
 ];
 
 const languages = ["Python", "R", "SQL", "JavaScript", "C#"];
-const databases = ["PostgreSQL", "MySQL", "Microsoft SQL Server", "SQLite", "Amazon RDS"];
+const databases = ["PostgreSQL", "MySQL", "Microsoft SQL Server", "SQLite", "AWS RDS"];
 const libs = [
   "NumPy",
   "Pandas",
@@ -120,7 +120,6 @@ const devTools = [
   "Jira",
   "AWS S3",
   "AWS Redshift",
-  "AWS RDS",
   "AWS QuickSight",
   "React",
   "Vite",
@@ -373,7 +372,7 @@ export default function Knowledge() {
       </Section>
 
       {/* Finance Platforms (Data/APIs + Market Data) */}
-      <Section icon={<FiDatabase className="text-teal-500" />} title="Finance Data & Platforms" subtitle="APIs, market data, and fixed-income resources I use frequently">
+      <Section icon={<FiDatabase className="text-teal-500" />} title="Finance Data & Platforms" subtitle="APIs, market data, and fixed-income resources I use. I primarily use LSEG and Capital IQ for market data platforms and alpaca markets API for data.">
         <GridCards>
           <Card className="p-6 space-y-3">
             <h3 className="font-semibold text-gray-900 dark:text-gray-100">Data & APIs</h3>
