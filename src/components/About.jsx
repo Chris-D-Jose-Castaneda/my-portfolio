@@ -256,10 +256,19 @@ export default function About() {
             </div>
           </Card>
 
-          {/* Bayern with icon in title */}
+          {/* Bayern section */}
           <Card
-            title="Best 25/26 Season Bayern Munich Games"
-            rightIcon={<FaFutbol className="text-xl" />}
+            title={
+              <h3 className="text-[18px] font-semibold text-teal-600 dark:text-teal-300 text-center">
+                {/* First part can wrap */}
+                <span>Best 25/26 Season Bayern Munich </span>
+                {/* “Games + ball” never breaks */}
+                <span className="inline-flex items-center gap-2 whitespace-nowrap align-middle">
+                  Games
+                  <FaFutbol className="text-lg text-teal-600 dark:text-teal-300" />
+                </span>
+              </h3>
+            }
           >
             <ul className="list-disc pl-5 space-y-1 text-gray-700 dark:text-gray-300">
               {bayernGames.map((g) => (
@@ -267,6 +276,8 @@ export default function About() {
               ))}
             </ul>
           </Card>
+
+
 
           {/* Kitchen Toolkit keeps the column filled (replaces Current Read) */}
           <Card title="Kitchen Toolkit">
