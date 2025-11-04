@@ -10,7 +10,7 @@ const GitHubCalendar = lazy(() => import("react-github-calendar"));
 export default function Home() {
   const [playing, setPlaying] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const TRACK_ID = "2FIQ7a06oBMqj9HVn969lf";
+  const TRACK_ID = "40SBS57su9xLiE1WqkXOVr";
   const username = "Chris-D-Jose-Castaneda";
 
   useEffect(() => setMounted(true), []);

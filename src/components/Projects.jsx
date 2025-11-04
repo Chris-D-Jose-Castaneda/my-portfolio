@@ -34,6 +34,15 @@ const projects = [
 
   // Row 2
   {
+    name: "Equity Dashboard Analytics",
+    description:
+      "Multi-asset market cockpit with KPIs, charts, and Supabase-backed data.",
+    tags: ["Flask & Rest APIs", "React", "Supabase", "User Authentication"],
+    url: "https://equity-dashboard-analytics.vercel.app/",
+    imgSrc: "/assets/Equity_Analytics.png",
+    imgAlt: "Equity Dashboard Analytics",
+  },
+  {
     name: "Premier League 2025/26 Prediction",
     description:
       "Match outcome and table projections for the 2025/26 season.",
@@ -51,6 +60,8 @@ const projects = [
     imgSrc: "/assets/Grade_Analysis.png",
     imgAlt: "Lead Analysis",
   },
+
+  // New cards (wrap to next row)
   {
     name: "Portfolio Strategy Comparison",
     description:
@@ -60,8 +71,6 @@ const projects = [
     imgSrc: "/assets/SPY.png",
     imgAlt: "Portfolio strategy comparison",
   },
-
-  // New cards (wrap to next row)
   {
     name: "Options Pricing Calculator",
     description:
