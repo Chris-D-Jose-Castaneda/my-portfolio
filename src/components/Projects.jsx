@@ -72,7 +72,7 @@ const projects = [
   {
     name: "Cross-Asset Regime Research",
     description:
-      "Regime detection and cross-asset analytics with FRED/Eikon pipelines and a Streamlit UI.",
+      "Regime detection and cross-asset analytics with FRED/Eikon/Yfinance pipelines and a Streamlit UI.",
     tags: ["Python", "Regimes", "FRED", "Eikon", "Streamlit"],
     url: "https://github.com/Chris-D-Jose-Castaneda/Cross-Asset-Regime-Research",
     imgSrc: "/assets/Macro_Credit_Radar.png",
