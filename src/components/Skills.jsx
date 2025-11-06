@@ -455,11 +455,15 @@ export default function Skills() {
 
           {/* Certifications in progress — now linked */}
           <div className="pt-2">
-            <div className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-2">Certifications in progress</div>
+            <div className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-2">Certifications in progress. I am currently studying for CFA L1</div>
             <div className="flex flex-wrap gap-2">
               <ExtLink href="https://www.cfainstitute.org/programs/cfa">
                 <Pill>Chartered Financial Analyst (CFA) Program Level I (prep)</Pill>
               </ExtLink>
+              <ExtLink href="https://www.garp.org/frm">
+                <Pill>Financial Risk Manager (FRM L1)</Pill>
+              </ExtLink>
+
               <ExtLink href="https://www.finra.org/registration-exams-ce/qualification-exams/securities-industry-essentials-exam">
                 <Pill>FINRA SIE Securities Industry Essentials</Pill>
               </ExtLink>

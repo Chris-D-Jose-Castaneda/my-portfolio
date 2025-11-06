@@ -2,13 +2,14 @@
 import React from "react";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
 
+// Order is top→bottom, left→right (4 per row on lg)
 const projects = [
   // Row 1
   {
     name: "SWFL Urban Market Analysis V1",
     description:
       "Listed-home analytics for April 2025 with pricing, inventory, and geospatial views.",
-    tags: ["Python", "R","EDA", "Time Series","GIS"],
+    tags: ["Python", "R", "EDA", "Time Series", "GIS"],
     url: "https://github.com/Chris-D-Jose-Castaneda/SWFL-Real-Estate-Analytical-Project",
     imgSrc: "/assets/SWFL_Urban_Housing.png",
     imgAlt: "SWFL Urban Housing analysis cover",
@@ -23,17 +24,6 @@ const projects = [
     imgAlt: "SWFL Forecasting Analysis",
   },
   {
-    name: "My Portfolio",
-    description:
-      "Version II built using React, Vite, TailwindCSS, and React Router.",
-    tags: ["React", "Vite", "TailwindCSS", "React Router"],
-    url: "https://github.com/Chris-D-Jose-Castaneda/my-portfolio",
-    imgSrc: "/assets/portfolio.png",
-    imgAlt: "Portfolio Screenshot",
-  },
-
-  // Row 2
-  {
     name: "Equity Dashboard Analytics",
     description:
       "Multi-asset market cockpit with KPIs, charts, and Supabase-backed data.",
@@ -43,9 +33,19 @@ const projects = [
     imgAlt: "Equity Dashboard Analytics",
   },
   {
-    name: "Premier League 2025/26 Prediction",
+    name: "Valuation Screener",
     description:
-      "Match outcome and table projections for the 2025/26 season.",
+      "Streamlit app to load Excel universes and screen by EV/EBITDA, ROE, and more.",
+    tags: ["Python", "Streamlit", "Excel"],
+    url: "https://github.com/Chris-D-Jose-Castaneda/Valuation-Screener",
+    imgSrc: "/assets/Valuation_Screener.png",
+    imgAlt: "Valuation Screener dashboard",
+  },
+
+  // Row 2
+  {
+    name: "Premier League 2025/26 Prediction",
+    description: "Match outcome and table projections for the 2025/26 season.",
     tags: ["Python", "Modeling", "Sports Analytics"],
     url: "https://github.com/Chris-D-Jose-Castaneda/Premier_League_2025_26_Prediction",
     imgSrc: "/assets/Cole_Palmer.png",
@@ -60,12 +60,47 @@ const projects = [
     imgSrc: "/assets/Grade_Analysis.png",
     imgAlt: "Lead Analysis",
   },
+  {
+    name: "Macro-Credit Stress & Sim",
+    description:
+      "FRED/Eikon pipelines, stress scoring, and scenario simulations with a Streamlit UI.",
+    tags: ["Python", "FRED", "Eikon", "Streamlit"],
+    url: "https://github.com/Chris-D-Jose-Castaneda/Macro-Credit-Stress-and-Sim",
+    imgSrc: "/assets/Macro-Credit Stressboard.png",
+    imgAlt: "Macro-Credit Stressboard & CFA",
+  },
+  {
+    name: "Cross-Asset Regime Research",
+    description:
+      "Regime detection and cross-asset analytics with FRED/Eikon pipelines and a Streamlit UI.",
+    tags: ["Python", "Regimes", "FRED", "Eikon", "Streamlit"],
+    url: "https://github.com/Chris-D-Jose-Castaneda/Cross-Asset-Regime-Research",
+    imgSrc: "/assets/Macro_Credit_Radar.png",
+    imgAlt: "Cross-Asset Regime Research",
+  },
 
-  // New cards (wrap to next row)
+  // Row 3
+  {
+    name: "My Portfolio",
+    description:
+      "Version II built using React, Vite, TailwindCSS, and React Router.",
+    tags: ["React", "Vite", "TailwindCSS", "React Router"],
+    url: "https://github.com/Chris-D-Jose-Castaneda/my-portfolio",
+    imgSrc: "/assets/portfolio.png",
+    imgAlt: "Portfolio Screenshot",
+  },
+  {
+    name: "Datalytics-Tech",
+    description:
+      "Real estate & data solutions for 100+ clients — dashboards, automation, and market research.",
+    tags: ["Website", "Dashboards", "Automation"],
+    url: "https://datalytics-tech.vercel.app/",
+    imgSrc: "/assets/Datalytics.png",
+    imgAlt: "Datalytics-Tech cover",
+  },
   {
     name: "Portfolio Strategy Comparison",
-    description:
-      "Backtests and compares multi-asset strategies vs SPY.",
+    description: "Backtests and compares multi-asset strategies vs SPY.",
     tags: ["Python", "Backtesting", "Pandas"],
     url: "https://github.com/Chris-D-Jose-Castaneda/portfolio-strategy-comparison",
     imgSrc: "/assets/SPY.png",
@@ -81,15 +116,15 @@ const projects = [
     imgAlt: "Options pricing app",
   },
 
-  // === LAST ENTRY (requested) ===
+  // Row 4 (final)
   {
-    name: "Datalytics-Tech",
+    name: "Road to CFA",
     description:
-      "Real estate & data solutions for 100+ clients — dashboards, automation, and market research.",
-    tags: ["Website", "Dashboards", "Automation"],
-    url: "https://datalytics-tech.vercel.app/",
-    imgSrc: "/assets/Datalytics.png",
-    imgAlt: "Datalytics-Tech cover",
+      "Condensed notes, formulas, and study trackers for CFA Levels I–II.",
+    tags: ["CFA", "Finance", "Study Notes"],
+    url: "https://github.com/Chris-D-Jose-Castaneda/Road-to-CFA-",
+    imgSrc: "/assets/CFA.png",
+    imgAlt: "CFA study materials cover",
   },
 ];
 
@@ -102,24 +137,20 @@ export default function Projects() {
     );
 
   return (
-    <main className="w-full max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-12">
-      <h1 className="text-3xl font-bold text-center text-gray-900 dark:text-gray-100">Projects</h1>
+    <main className="w-full max-w-6xl mx-auto px-4 sm:px-6 py-12 space-y-12">
+      <h1 className="text-3xl font-bold text-center text-gray-900 dark:text-gray-100">
+        Projects
+      </h1>
 
-      <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      {/* 1 → 2 → 3 → 4 columns as screen widens */}
+      <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {projects.map((proj) => (
           <a
             key={proj.name}
             href={proj.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="
-              group block bg-white dark:bg-gray-800
-              p-6 rounded-lg shadow
-              transition-transform duration-200
-              hover:-translate-y-1
-              hover:shadow-xl
-              hover:ring-4 hover:ring-cyan-500/50
-            "
+            className="group block bg-white dark:bg-gray-800 p-6 rounded-lg shadow transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl hover:ring-4 hover:ring-cyan-500/50"
           >
             <img
               src={proj.imgSrc}
@@ -139,12 +170,7 @@ export default function Projects() {
               {proj.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="
-                    text-sm font-medium
-                    bg-gray-100 dark:bg-gray-700
-                    text-gray-800 dark:text-gray-200
-                    px-2 py-1 rounded
-                  "
+                  className="text-sm font-medium bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-2 py-1 rounded"
                 >
                   {tag}
                 </span>
