@@ -45,7 +45,7 @@ export default function Home() {
                 delaySpeed={3000}
               />
             </span>{" "}
-            from Naples, FL{" "}
+            from Fort Myers, FL{" "}
             <GiPalmTree className="inline-block text-2xl text-teal-500" />
           </p>
           <p className="mt-6 text-base italic dark:text-gray-300">
