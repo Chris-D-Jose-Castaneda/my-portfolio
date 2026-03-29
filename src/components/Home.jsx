@@ -36,7 +36,7 @@ export default function Home() {
             A{" "}
             <span className="font-semibold">
               <Typewriter
-                words={["Statistician", "Data Scientist", "Developer"]}
+                words={["Statistician", "Data Analyst", "Developer"]}
                 loop={0}
                 cursor
                 cursorStyle="|"
@@ -49,9 +49,8 @@ export default function Home() {
             <GiPalmTree className="inline-block text-2xl text-teal-500" />
           </p>
           <p className="mt-6 text-base italic dark:text-gray-300">
-            Mathematics | Finance | Economics | Machine Learning | Programming |
-            Stochastic Processes | Time Series Analysis | Multivariate
-            Analysis | Quantitative Analysis
+            Statistics | Finance | Econometrics | Machine Learning | Equity Research |
+           | Quantitative Analysis
           </p>
         </div>
 
